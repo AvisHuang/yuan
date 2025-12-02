@@ -99,7 +99,7 @@
 
     <!-- Page 2 -->
     <div id="page2" class="page">
-        <img src="C:\Users\avism\Desktop\yuan\img\S__72097814_0.jpg" width="280" height="370" alt="">
+        <img src=https://github.com/AvisHuang/yuan/blob/main/S__72097814_0.jpg width="280" height="370" alt="">
         <h2>請問今天是和帥哥男朋友在一起第幾天</h2>
         <input id="dayInput" type="text" placeholder="請輸入內容">
         <button onclick="dayInput()">送出</button>
@@ -107,7 +107,7 @@
 
     <!-- Page 3 -->
     <div id="page3" class="page">
-        <img src="C:\Users\avism\Desktop\yuan\img\S__72097794.jpg" width="230" height="370" alt="">
+        <img src=https://github.com/AvisHuang/yuan/blob/main/S__72097794.jpg width="230" height="370" alt="">
         <h2>妳有沒有每天想妳帥氣的男朋友</h2>
         <button id="yesBtn" onclick="goNext()">是</button>
         <button id="noBtn" onclick="growNo()">否</button>
@@ -325,5 +325,6 @@
     </script>
 </body>
 </html>
+
 
 
