@@ -129,7 +129,7 @@
     <!-- Page 6 -->
     <div id="page6" class="page">
         <video id="myVideo" width="400" controls>
-            <source src="C:\Users\avism\Desktop\yuan\video\786357431.896947.mp4" type="video/mp4">
+            <source src=https://github.com/AvisHuang/yuan/releases/download/v1/786357431.896947.mp4 type="video/mp4">
             你的瀏覽器不支援影片播放
         </video>
     </div>
@@ -318,10 +318,11 @@
                     setTimeout(function () {
                         document.getElementById("page6").classList.remove("active");
                         document.getElementById("page7").classList.add("active");
-                    }, 7000); // 7000 毫秒 = 7 秒
+                    }, 5000); // 7000 毫秒 = 7 秒
                 });
             }
         });
     </script>
 </body>
 </html>
+
