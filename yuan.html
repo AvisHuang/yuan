@@ -1,0 +1,327 @@
+<html lang="zh-Hant">
+<head>
+    <title>給蔡笨媛</title>
+
+    <style>
+    img {
+        border-radius: 15px;         /* 圓角 */
+        border:4px solid #ffffff;    /* 白色邊框 */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* 陰影 */
+    }
+
+    video {
+        border-radius: 15px;         /* 圓角 */
+        border:4px solid #ffffff;    /* 白色邊框 */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* 陰影 */
+    }
+
+    body {
+        background-color: #ffa07a;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .page {
+        display: none;          /* 預設都不顯示 */
+    }
+
+    .page.active {
+        display: block;         /* 有 active 的那一頁顯示 */
+    }
+
+    /* 🌸 統一全部按鈕樣式變漂亮 */
+    button {
+        background: linear-gradient(135deg, #ff7a9e, #ff4b75); /* 漸層粉紅 */
+        border: none;
+        border-radius: 999px;                 /* 膠囊圓角 */
+        padding: 10px 26px;
+        margin: 8px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(255, 75, 117, 0.6);
+        transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+    }
+
+    button:hover {
+        transform: translateY(-2px) scale(1.03);
+        box-shadow: 0 7px 18px rgba(255, 75, 117, 0.8);
+        opacity: 0.95;
+    }
+
+    button:active {
+        transform: translateY(0px) scale(0.98);
+        box-shadow: 0 3px 8px rgba(255, 75, 117, 0.6);
+        opacity: 0.9;
+    }
+
+    /* 讓上下兩顆按鈕不要太貼 */
+    #yesBtn, #noBtn, #yesBtn1, #noBtn1 {
+        min-width: 90px;
+    }
+
+    .heart {
+        position: fixed;          /* 固定在畫面上，不會被捲動影響 */
+        bottom: -20px;            /* 從螢幕下面冒出來 */
+        left: 50%;                /* 先放中間，等等用 JS 微調 */
+        font-size: 24px;
+        color: #ff4b75;
+        pointer-events: none;     /* 不要擋到點擊 */
+        animation: floatUp 3s linear forwards;  /* 套用往上飄動畫 */
+        opacity: 0.9;
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translate(-50%, 0) scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: translate(-50%, -120vh) scale(1.5); /* 往螢幕上飄出 */
+            opacity: 0;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+    <!-- Page 1 -->
+    <div id="page1" class="page active">
+        <img src="C:\Users\avism\Desktop\yuan\img\1.jpg" width="280" height="370" alt="">
+        <h2 class="morning">早安蔡公主</h2>
+        <input id="morning" type="text" placeholder="請輸入密碼">
+        <button onclick="morning()">送出</button>
+    </div>
+
+    <!-- Page 2 -->
+    <div id="page2" class="page">
+        <img src="C:\Users\avism\Desktop\yuan\img\S__72097814_0.jpg" width="280" height="370" alt="">
+        <h2>請問今天是和帥哥男朋友在一起第幾天</h2>
+        <input id="dayInput" type="text" placeholder="請輸入內容">
+        <button onclick="dayInput()">送出</button>
+    </div>
+
+    <!-- Page 3 -->
+    <div id="page3" class="page">
+        <img src="C:\Users\avism\Desktop\yuan\img\S__72097794.jpg" width="230" height="370" alt="">
+        <h2>妳有沒有每天想妳帥氣的男朋友</h2>
+        <button id="yesBtn" onclick="goNext()">是</button>
+        <button id="noBtn" onclick="growNo()">否</button>
+    </div>
+
+    <!-- Page 4 -->
+    <div id="page4" class="page">
+        <img src="C:\Users\avism\Downloads\1.jpg" width="280" height="370" alt="">
+        <h2>那請問小公主準備好了嗎</h2>
+        <button id="yesBtn1" onclick="goToPage5()">是</button>
+        <button id="noBtn1" onclick="notready()">否</button>
+    </div>
+
+    <!-- Page 5 -->
+    <div id="page5" class="page">
+        <h1 id="countText">倒數：3</h1>
+    </div>
+
+    <!-- Page 6 -->
+    <div id="page6" class="page">
+        <video id="myVideo" width="400" controls>
+            <source src="C:\Users\avism\Desktop\yuan\video\786357431.896947.mp4" type="video/mp4">
+            你的瀏覽器不支援影片播放
+        </video>
+    </div>
+
+    <!-- Page 7 -->
+    <div id="page7" class="page">
+        <h2>恭喜小公主看完了 💓</h2>
+        <p>這是妳專屬的帥哥男朋友給妳的小驚喜結局～</p>
+        <h1>請妳繼續好好喜歡男朋友 知道嗎😼</h1>
+        <button id="yesBtn2" onclick="gift()">是</button>
+        <button id="noBtn2" onclick="growNo1()">否</button>
+    </div>
+
+    <!-- Page 8 -->
+    <div id="page8" class="page">
+        <h2>很棒! 男朋友今天是阿拉丁神燈</h2>
+	<h2>請輸入想要的禮物</h2>
+
+        <input id="gift" type="text" placeholder="想要甚麼禮物">
+        <button onclick="gift()">送出</button>
+    </div>
+
+
+
+
+    <script>
+        // Page1：密碼
+        function morning() {
+            let input = document.getElementById("morning").value;
+
+            if (input == "520yuan") {
+                document.getElementById("page1").classList.remove("active");
+                document.getElementById("page2").classList.add("active");
+            } else {
+                alert("錯 去問男朋友！");
+            }
+        }
+
+        // Page2：天數
+        function dayInput() {
+            let input = document.getElementById("dayInput").value;
+
+            if (input == "365") {
+                document.getElementById("page2").classList.remove("active");
+                document.getElementById("page3").classList.add("active");
+                boomHearts(); // 🎉 放愛心
+            } else {
+                alert("女人給我重新想 再錯一次就扁妳!");
+            }
+        }
+
+        // Page3：是
+        function goNext() {
+            document.getElementById("page3").classList.remove("active");
+            document.getElementById("page4").classList.add("active");
+        }
+
+        // Page7：是 → 到 Page8
+        function gift() {
+            document.getElementById("page7").classList.remove("active");
+            document.getElementById("page8").classList.add("active");
+        }
+
+        // Page3：「否」按鈕越按越大
+        let size1 = 16;  // 初始字體大小
+        function growNo() {
+            size1 += 60; // 每次按增加字體大小
+
+            let yesBtn = document.getElementById("yesBtn");
+            yesBtn.style.fontSize = size1 + "px";
+            yesBtn.style.padding = (size1 / 2) + "px " + size1 + "px";
+
+            if (size1 > 300) {
+                let noBtn = document.getElementById("noBtn");
+                noBtn.remove();
+                alert("最好給我說是 妳是真的想被我扁😡");
+            }
+        }
+
+        // Page7：「否」按鈕越按越大
+        let size2 = 16;  // 初始字體大小
+        function growNo1() {
+            size2 += 60; // 每次按增加字體大小
+
+            let yesBtn2 = document.getElementById("yesBtn2");
+            yesBtn2.style.fontSize = size2 + "px";
+            yesBtn2.style.padding = (size2 / 2) + "px " + size2 + "px";
+
+            if (size2 > 300) {
+                let noBtn2 = document.getElementById("noBtn2");
+                noBtn2.remove();
+                alert("最好給我說是 妳是真的想被我扁😡");
+            }
+        }
+
+        function notready() {
+            alert("不要給我皮！😡 再按一次就處罰妳！");
+        }
+
+        // Page4 → Page5：倒數
+        let count = 3; // 倒數秒數
+
+        function goToPage5() {
+            document.getElementById("page4").classList.remove("active");
+            document.getElementById("page5").classList.add("active");
+            startCountdown();
+        }
+
+        function startCountdown() {
+            let timer = setInterval(() => {
+                count--;
+                document.getElementById("countText").innerText = "倒數：" + count;
+
+                if (count <= 0) {
+                    clearInterval(timer);
+
+                    // 換頁：隱藏倒數 → 顯示影片
+                    document.getElementById("page5").classList.remove("active");
+                    document.getElementById("page6").classList.add("active");
+
+                    // 自動播放影片（若手機可能需要按一下）
+                    document.getElementById("myVideo").play();
+                }
+            }, 1000);
+        }
+
+        // 產生一顆會往上飄的愛心
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.textContent = "💓";
+
+            // 隨機左右位置 & 大小
+            const randomLeft = Math.random() * 80 + 10; // 10% ~ 90%
+            const randomSize = Math.random() * 20 + 20; // 20px ~ 40px
+
+            heart.style.left = randomLeft + "vw";
+            heart.style.fontSize = randomSize + "px";
+
+            document.body.appendChild(heart);
+
+            // 動畫結束後把這顆愛心從畫面移除
+            setTimeout(() => {
+                heart.remove();
+            }, 3000);
+        }
+
+        // 一次放很多顆愛心（例如超開心的時候）
+        function boomHearts() {
+            for (let i = 0; i < 15; i++) {
+                setTimeout(createHeart, i * 150); // 每 0.15 秒生成一顆
+            }
+        }
+
+        // 每三秒噴一次愛心
+        setInterval(() => {
+            boomHearts();
+        }, 3000);
+
+        // 事件綁定
+        window.addEventListener("DOMContentLoaded", function () {
+            // page1：輸入密碼按 Enter = 按送出
+            const morningInput = document.getElementById("morning");
+            if (morningInput) {
+                morningInput.addEventListener("keydown", function (event) {
+                    if (event.key === "Enter") {
+                        morning();
+                    }
+                });
+            }
+
+            // page2：輸入天數按 Enter = 按送出
+            const dayInputEl = document.getElementById("dayInput");
+            if (dayInputEl) {
+                dayInputEl.addEventListener("keydown", function (event) {
+                    if (event.key === "Enter") {
+                        dayInput();
+                    }
+                });
+            }
+
+            //  影片播完後，7 秒再跳到 page7
+            const video = document.getElementById("myVideo");
+            if (video) {
+                video.addEventListener("ended", function () {
+                    setTimeout(function () {
+                        document.getElementById("page6").classList.remove("active");
+                        document.getElementById("page7").classList.add("active");
+                    }, 7000); // 7000 毫秒 = 7 秒
+                });
+            }
+        });
+    </script>
+</body>
+</html>
